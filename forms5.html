@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+    <script>
+        function displayData(event) {
+            event.preventDefault(); // Prevent form submission
+            const form = event.target;
+            const output = `
+                <h2>Submitted Form Data:</h2>
+                <p>Name: ${form.name.value}</p>
+                <p>Roll No: ${form.roll.value}</p>
+                <p>DOB: ${form.dob.value}</p>
+                <p>Gender: ${form.gender.value}</p>
+                <p>Email: ${form.email.value}</p>
+                <p>Mobile: ${form.mobile.value}</p>
+                <p>Dept: ${form.dept.value}</p>
+                <p>College: ${form.college.value}</p>
+                <p>Nationality: ${form.nationality.value}</p>
+            `;
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="displayData(event)">
+        Name: <input type="text" name="name"><br>
+        Roll No: <input type="text" name="roll"><br>
+        DOB: <input type="date" name="dob"><br>
+        Gender: 
+        <input type="radio" name="gender" value="Male"> Male 
+        <input type="radio" name="gender" value="Female"> Female<br>
+        Email: <input type="email" name="email"><br>
+        Mobile: <input type="tel" name="mobile"><br>
+        Dept: <input type="text" name="dept"><br>
+        College: <input type="text" name="college"><br>
+        Nationality: <input type="text" name="nationality"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="output"></div>
+</body>
+</html>
